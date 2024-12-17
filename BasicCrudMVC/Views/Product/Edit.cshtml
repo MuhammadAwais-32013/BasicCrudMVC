@@ -1,0 +1,53 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model BasicCrudMVC.Models.Entity.Product
+<div class="container mt-5">
+    <div class="card shadow-lg">
+        <div class="card-header bg-primary text-white text-center">
+            <h3>Add Product </h3>
+        </div>
+        <div class="card-body">
+            <form method="post">
+
+                <div class="mb-3">
+                    <label for="productName" class="form-label">Product ID</label>
+                    <input type="text" class="form-control" id="Name" asp-for="Id" readonly>
+                </div>
+                <!-- Name Field -->
+                <div class="mb-3">
+                    <label for="productName" class="form-label">Product Name</label>
+                    <input type="text" class="form-control" id="Name" asp-for="Name" placeholder="Enter product name" required>
+                </div>
+
+                <!-- Description Field -->
+                <div class="mb-3">
+                    <label for="productDescription" class="form-label">Description</label>
+                    <textarea class="form-control" id="productDescription" asp-for="Description" rows="3" placeholder="Enter product description" required></textarea>
+                </div>
+
+                <!-- Price Field -->
+                <div class="mb-3">
+                    <label for="productPrice" class="form-label">Price</label>
+                    <div class="input-group">
+                        <span class="input-group-text">$</span>
+                        <input type="number" class="form-control" id="productPrice" asp-for="Price" placeholder="Enter price" min="0" step="0.01" required>
+                    </div>
+                </div>
+
+                <!-- Stock Field -->
+                <div class="mb-3">
+                    <label for="productStock" class="form-label">Stock</label>
+                    <input type="number" class="form-control" id="productStock" asp-for="Stock" placeholder="Enter stock quantity" min="0" required>
+                </div>
+
+                <!-- Submit Button -->
+                <div class="d-grid">
+                    <button type="submit" class="btn btn-primary btn-lg">Save</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
